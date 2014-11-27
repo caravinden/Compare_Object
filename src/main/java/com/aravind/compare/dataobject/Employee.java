@@ -7,7 +7,7 @@ package com.aravind.compare.dataobject;
  * @author aravind
  *
  */
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
 	private int empID;
 	private String empName;
@@ -61,6 +61,12 @@ public class Employee {
 	}
 	public void setSalary(double salary) {
 		this.salary = salary;
+	}
+
+	
+	@Override
+	public int compareTo(Employee employee) {
+		return this.empName.compareTo(employee.getEmpName());
 	}
 	
 }
